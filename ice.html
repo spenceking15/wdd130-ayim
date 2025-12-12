@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICE Challenges - SA Web Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f7fafc;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 1rem;
+      color: #1a365d;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #4299e1;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #1a365d;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    
+    header {
+      background-color: #1a365d;
+      color: white;
+      padding: 1.5rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .logo {
+      max-width: 80px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    
+    nav {
+      background-color: #2d3748;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #4299e1;
+      color: white;
+    }
+
+    
+    main {
+      padding: 2rem 0;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #4299e1;
+    }
+
+    
+    .ice-intro {
+      text-align: center;
+    }
+
+    .ice-intro p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .challenge-card {
+      background-color: #f7fafc;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .challenge-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .challenge-card h3 {
+      color: #1a365d;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-card p {
+      margin-bottom: 1rem;
+    }
+
+    .challenge-link {
+      display: inline-block;
+      background-color: #4299e1;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .challenge-link:hover {
+      background-color: #1a365d;
+      color: white;
+    }
+
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-category {
+      background-color: #f7fafc;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .skill-category h3 {
+      color: #1a365d;
+      margin-bottom: 1rem;
+    }
+
+    .skill-category ul {
+      list-style-type: none;
+    }
+
+    .skill-category li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .skill-category li:last-child {
+      border-bottom: none;
+    }
+
+    
+    footer {
+      background-color: #1a365d;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #4299e1;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      
+      .logo {
+        max-width: 60px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+      
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+      <img src="./e2fca014-d5f1-43e8-a04b-c5ee73c8f47c.png" alt="SA Web Logo" class="logo">
+      <h1>ICE CHALLENGES</h1>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wwr/index.html">WWR</a></li>
+        <li><a href="ice.html">ICE</a></li>
+        <li><a href="aboutme/index.html">About Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="ice-intro">
+      <h2>In-Class Exercise Challenges</h2>
+      <p>
+        These are my In-Class Exercise (ICE) challenges completed during WDD130. 
+        Each challenge helped me practice and improve different web development skills.
+      </p>
+    </section>
+
+    
+    <section class="ice-challenges">
+      <h2>My ICE Challenges</h2>
+      <div class="challenge-grid">
+
+        <div class="challenge-card">
+          <h3>ICE 1: Basic HTML Structure</h3>
+          <p><strong>Description:</strong> Created a simple HTML page with proper semantic structure including header, main, and footer elements.</p>
+          <p><strong>What I Learned:</strong> The importance of semantic HTML for accessibility and SEO, and how to structure a basic web page.</p>
+          <a href="ice/ice1.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+
+        
+        <div class="challenge-card">
+          <h3>ICE 2: CSS Styling</h3>
+          <p><strong>Description:</strong> Applied CSS styles to an HTML page, focusing on colors, typography, and layout.</p>
+          <p><strong>What I Learned:</strong> How to use CSS selectors, the box model, and how to create visually appealing designs with proper spacing.</p>
+          <a href="ice/ice2.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+
+        
+        <div class="challenge-card">
+          <h3>ICE 3: Positioning and Layout</h3>
+          <p><strong>Description:</strong> Practiced different CSS positioning techniques including relative, absolute, and fixed positioning.</p>
+          <p><strong>What I Learned:</strong> How to control element placement on a page and create complex layouts using positioning properties.</p>
+          <a href="ice/ice3.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+
+
+        <div class="challenge-card">
+          <h3>ICE 4: Flexbox</h3>
+          <p><strong>Description:</strong> Created responsive layouts using CSS Flexbox to arrange elements in rows and columns.</p>
+          <p><strong>What I Learned:</strong> How to use flex container and item properties to create flexible, responsive layouts that work on different screen sizes.</p>
+          <a href="ice/ice4.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+
+        
+        <div class="challenge-card">
+          <h3>ICE 5: CSS Grid</h3>
+          <p><strong>Description:</strong> Built complex layouts using CSS Grid with both explicit and implicit grid tracks.</p>
+          <p><strong>What I Learned:</strong> How to create two-dimensional layouts with precise control over rows and columns using grid properties.</p>
+          <a href="ice/ice5.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+
+        
+        <div class="challenge-card">
+          <h3>ICE 6: Responsive Design</h3>
+          <p><strong>Description:</strong> Implemented responsive web design principles using media queries and flexible units.</p>
+          <p><strong>What I Learned:</strong> How to create websites that adapt to different screen sizes and devices, improving user experience across platforms.</p>
+          <a href="ice/ice6.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+
+    
+        <div class="challenge-card">
+          <h3>ICE 7: Forms and Validation</h3>
+          <p><strong>Description:</strong> Created HTML forms with various input types and implemented basic client-side validation.</p>
+          <p><strong>What I Learned:</strong> How to structure forms for usability, different input types, and how to provide feedback to users with validation.</p>
+          <a href="ice/ice7.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+
+        
+        <div class="challenge-card">
+          <h3>Prophet Cards</h3>
+          <p><strong>Description:</strong> Created a gallery of prophet cards with hover effects and responsive design.</p>
+          <p><strong>What I Learned:</strong> Advanced CSS techniques including transitions, transforms, and creating engaging user interfaces with interactive elements.</p>
+          <a href="ice/prophet_cards/nelson.html" class="challenge-link" target="_blank">View Challenge</a>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="skills-developed">
+      <h2>Skills Developed Through ICE Challenges</h2>
+      <div class="skills-list">
+        <div class="skill-category">
+          <h3>HTML Skills</h3>
+          <ul>
+            <li>Semantic HTML5 elements</li>
+            <li>Form structure and input types</li>
+            <li>Accessibility best practices</li>
+            <li>Table structure</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>CSS Skills</h3>
+          <ul>
+            <li>Selectors and specificity</li>
+            <li>Box model and positioning</li>
+            <li>Flexbox and Grid layouts</li>
+            <li>Responsive design with media queries</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Design Skills</h3>
+          <ul>
+            <li>Color theory and typography</li>
+            <li>Visual hierarchy</li>
+            <li>User experience principles</li>
+            <li>Interactive elements and transitions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Spencer Ayim | 
+        <a href="#" target="_blank" rel="noopener noreferrer">Social Links</a> | 
+        <a href="mailto:spencerayim2007@gmail.com">Email Me</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
